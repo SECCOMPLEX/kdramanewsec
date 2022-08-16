@@ -15,8 +15,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/EvamariaTG/EvaMaria",
-    "repository": "https://github.com/EvamariaTG/EvaMaria",
+    "website": "https://github.com/SECCOMPLEX/SECAutoFilter",
+    "repository": "https://github.com/SECCOMPLEX/SECAutoFilter",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
