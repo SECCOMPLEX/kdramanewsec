@@ -8,7 +8,7 @@ from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import ADMINS, DELETE_TIME, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
@@ -427,8 +427,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⚙️ Manual Filter', callback_data='manuelfilter'),
             InlineKeyboardButton('🚦 Auto Filter', callback_data='autofilter')
         ], [
-            InlineKeyboardButton('Connection ⚒', callback_data='coct'),
-            InlineKeyboardButton('Extra Mods 🪄', callback_data='extra')
+            InlineKeyboardButton('⚒ Connection', callback_data='coct'),
+            InlineKeyboardButton('🪄 Extra Mods', callback_data='extra')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔮 Status', callback_data='stats')
@@ -441,7 +441,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/SECLK'),
+            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria'),
             InlineKeyboardButton('♥️ Main Channel', url='https://t.me/SECL4u')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
@@ -790,42 +790,6 @@ async def manual_filters(client, message, text=False):
             reply_text, btn, alert, fileid = await find_filter(group_id, keyword)
 
             if reply_text:
-                reply_text = reply_text.replace("\\n", "\n").replace("\\t", "\t")
-
-            if btn is not None:
-                try:
-                    if fileid == "None":
-                        if btn == "[]":
-                            await client.send_message(group_id, reply_text, disable_web_page_preview=True)
-                        else:
-                            button = eval(btn)
-                            await client.send_message(
-                                group_id,
-                                reply_text,
-                                disable_web_page_preview=True,
-                                reply_markup=InlineKeyboardMarkup(button),
-                                reply_to_message_id=reply_id
-                            )
-                    elif btn == "[]":
-                        await client.send_cached_media(
-                            group_id,
-                            fileid,
-                            caption=reply_text or "",
-                            reply_to_message_id=reply_id
-                        )
-                    else:
-                        button = eval(btn)
-                        await message.reply_cached_media(
-                            fileid,
-                            caption=reply_text or "",
-                            reply_markup=InlineKeyboardMarkup(button),
-                            reply_to_message_id=reply_id
-                        )
-                except Exception as e:
-                    logger.exception(e)
-                break
-    else:
-        return False
                 reply_text = reply_text.replace("\\n", "\n").replace("\\t", "\t")
 
             if btn is not None:
