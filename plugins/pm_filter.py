@@ -8,7 +8,7 @@ from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, AUTO_DELETE, DELETE_TIME, P_TTI_SHOW_OFF, IMDB, \
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, DELETE_TIME, P_TTI_SHOW_OFF, IMDB, \
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
@@ -367,9 +367,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
                 )
-                k = await client.send_message(chat_id=query.from_user.id, text="This message will be Auto Deleted after One Hours to avoid copyright issues.")
+                await client.send_message(chat_id=query.from_user.id, text="This message will be Auto Deleted after One Hours to avoid copyright issues.")
                 await asyncio.sleep(DELETE_TIME)
-                await k.delete() if AUTO_DELETE else None
+                await k.delete()
                 await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
@@ -408,7 +408,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await client.send_message(chat_id=query.from_user.id, text="This message will be Auto Deleted after One Hours to avoid copyright issues.")
         await asyncio.sleep(DELETE_TIME)
-        await k.delete() if AUTO_DELETE else None
+        await k.delete()
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
