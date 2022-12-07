@@ -84,9 +84,7 @@ async def next_page(bot, query):
                 [
                     InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
                     InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-       
+                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])       
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -677,8 +675,7 @@ async def auto_filter(client, msg, spoll=False):
                 [
                     InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
                     InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
+                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])      
                 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
