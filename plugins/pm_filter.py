@@ -8,7 +8,7 @@ from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, AUTO_DELETE, P_TTI_SHOW_OFF, IMDB, \
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
@@ -361,12 +361,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                await client.send_cached_media(
+                k = await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
                 )
+                await asyncio.sleep(3600)
+                await k.delete() if settings['auto_delete'] else None
                 await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
@@ -397,12 +399,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         await query.answer()
-        await client.send_cached_media(
+        k = await client.send_cached_media(
             chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
+        await asyncio.sleep(3600)
+        await k.delete() if settings['auto_delete'] else None
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
@@ -605,6 +609,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Welcome', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
                     InlineKeyboardButton('✅ Yes' if settings["welcome"] else '❌ No',
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
+                ],
+                [
+                    InlineKeyboardButton('PM Auto Delete', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('One Hours' if settings["auto_delete"] else '❌ No',
+                                         callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}')
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
