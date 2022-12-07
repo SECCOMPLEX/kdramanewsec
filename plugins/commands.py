@@ -246,9 +246,8 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
-    if settings['auto_delete']:
     await asyncio.sleep(3600)
-    await k.delete()
+    await k.delete() if settings['auto_delete'] else None
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
