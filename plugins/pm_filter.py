@@ -414,6 +414,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.send_message(chat_id=query.from_user.id, text="This message will be Auto Deleted after One Hours to avoid copyright issues.")
         await asyncio.sleep(DELETE_TIME)
         await k.delete()
+    elif query.data == "reqinfo":
+        await query.answer(text=script.REQINFO, show_alert=True)
+    elif query.data == "minfo":
+        await query.answer(text=script.MINFO, show_alert=True)
+    elif query.data == "sinfo":
+        await query.answer(text=script.SINFO, show_alert=True)
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
