@@ -82,7 +82,7 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-        btn.insert(
+        btn.insert(0,
             [InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])
