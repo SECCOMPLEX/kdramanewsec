@@ -246,6 +246,7 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
+    if settings['auto_delete']:
     await asyncio.sleep(3600)
     await k.delete()
                     
