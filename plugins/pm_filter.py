@@ -413,9 +413,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ 🤖', url=f'https://t.me/SECLK')
                 ],[
                     InlineKeyboardButton('Hᴇʟᴘ ℹ️', callback_data='help'),
-                    InlineKeyboardButton('Aʙᴏᴜᴛ 😊', callback_data='about'),
-                    InlineKeyboardButton('Bᴏᴛ Oᴡɴᴇʀ 👤', callback_data="owner_info")
-                ]]
+                    InlineKeyboardButton('Aʙᴏᴜᴛ 😊', callback_data='about')
+                  ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
