@@ -247,7 +247,7 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
         )
     await asyncio.sleep(DELETE_TIME)
-    await k.delete() if settings['auto_delete'] else None
+    await k.delete() if AUTO_DELETE else None
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
@@ -454,16 +454,6 @@ async def settings(client, message):
                 InlineKeyboardButton(
                     '✅ Yes' if settings["welcome"] else '❌ No',
                     callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    'PM Auto Delete',
-                    callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    'One Hours' if settings["auto_delete"] else '❌ No',
-                    callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
                 ),
             ],
         ]
