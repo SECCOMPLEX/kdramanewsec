@@ -41,7 +41,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("okey", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -94,14 +94,14 @@ async def next_page(bot, query):
     else:
         off_set = offset - 10
     if n_offset == 0:
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://t.me/{temp.U_NAME}")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
             [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📃 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://t.me/{temp.U_NAME}")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
@@ -371,10 +371,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
                 )
-                await client.send_message(chat_id=query.from_user.id, text="This message will be Auto Deleted after One Hours to avoid copyright issues.")
+                await query.answer('Check PM, I have sent files in pm', show_alert=True)
+                await client.send_message(chat_id=query.from_user.id, text="𝚃𝚑𝚒𝚜 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚠𝚒𝚕𝚕 𝚋𝚎 𝙰𝚞𝚝𝚘 𝙳𝚎𝚕𝚎𝚝𝚎𝚍 𝚊𝚏𝚝𝚎𝚛 𝙾𝚗𝚎 𝙷𝚘𝚞𝚛𝚜 𝚝𝚘 𝚊𝚟𝚘𝚒𝚍 𝚌𝚘𝚙𝚢𝚛𝚒𝚐𝚑𝚝 𝚒𝚜𝚜𝚞𝚎𝚜.")
                 await asyncio.sleep(DELETE_TIME)
                 await k.delete()
-                await query.answer('Check PM, I have sent files in pm', show_alert=True)
+                
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
         except PeerIdInvalid:
@@ -410,7 +411,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
-        await client.send_message(chat_id=query.from_user.id, text="This message will be Auto Deleted after One Hours to avoid copyright issues.")
+        await client.send_message(chat_id=query.from_user.id, text="𝚃𝚑𝚒𝚜 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚠𝚒𝚕𝚕 𝚋𝚎 𝙰𝚞𝚝𝚘 𝙳𝚎𝚕𝚎𝚝𝚎𝚍 𝚊𝚏𝚝𝚎𝚛 𝙾𝚗𝚎 𝙷𝚘𝚞𝚛𝚜 𝚝𝚘 𝚊𝚟𝚘𝚒𝚍 𝚌𝚘𝚙𝚢𝚛𝚒𝚐𝚑𝚝 𝚒𝚜𝚜𝚞𝚎𝚜.")
         await asyncio.sleep(DELETE_TIME)
         await k.delete()
     elif query.data == "reqinfo":
@@ -425,7 +426,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🔍 Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ', url=f'https://t.me/About_Sandaruwan/23'),
+                    InlineKeyboardButton('🔍 Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
                     InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ 🤖', url=f'https://t.me/SECLK')
                 ],[
                     InlineKeyboardButton('Hᴇʟᴘ ℹ️', callback_data='help'),
@@ -682,15 +683,15 @@ async def auto_filter(client, msg, spoll=False):
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://t.me/{temp.U_NAME}")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://t.me/{temp.U_NAME}")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+             [InlineKeyboardButton(text="𝙽𝙾 𝙼𝙾𝚁𝙴 𝙿𝙰𝙶𝙴𝚂 𝙰𝚅𝙰𝙸𝙻𝙰𝙱𝙻𝙴",callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -727,7 +728,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"Here is what i found for your query ➠ {search}"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
