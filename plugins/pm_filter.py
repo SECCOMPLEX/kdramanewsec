@@ -72,7 +72,7 @@ async def next_page(bot, query):
     if not files:
         return
     settings = await get_settings(query.message.chat.id)
-    if if settings['auto_delete']:
+    if settings['auto_delete']:
         btn = [
             [
                 InlineKeyboardButton(
