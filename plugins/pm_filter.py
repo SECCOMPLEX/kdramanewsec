@@ -56,6 +56,10 @@ async def next_page(bot, query):
         n_offset = int(n_offset)
     except:
         n_offset = 0
+        btn.append(
+            [InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
+            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
+            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])
 
     if not files:
         return
@@ -82,11 +86,6 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-        btn.append(
-            [InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')]
-        )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -651,6 +650,10 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
+    btn.append(
+        [InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
+         InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
+         InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])
     if settings["button"]:
         btn = [
             [
@@ -674,11 +677,6 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-        btn.append(
-            [InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-            InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-            InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')]
-        )
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
