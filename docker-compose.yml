@@ -1,4 +1,4 @@
-version: "3.9.15"
+version: "3.11"
 services:
    worker:
     build: .
@@ -11,4 +11,4 @@ services:
       LOG_CHANNEL: $LOG_CHANNEL
       DATABASE_NAME: $DATABASE_NAME
       DATABASE_URI: $DATABASE_URI
-      HEROKU_API_KEY: $HEROKU_API_KEY
+      COLLECTION_NAME: $COLLECTION_NAME
