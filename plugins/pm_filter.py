@@ -675,7 +675,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.insert(0,
             [InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
              InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo"),
-             InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfoo")])
+             InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo")])
         btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
