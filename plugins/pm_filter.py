@@ -30,7 +30,7 @@ BUTTONS = {}
 SPELL_CHECK = {}
 
 
-@Client.on_message(filters.group & filters.text & filters.incoming)
+@Client.on_message((filters.group | filters.private) & filters.text & filters.incoming)
 async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
@@ -82,6 +82,11 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+        btn.insert(0,
+            [InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
+             InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
+             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')]
+        )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -403,6 +408,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
+    elif query.data == "reqinfo":
+        await query.answer(text=script.REQINFO, show_alert=True)
+    elif query.data == "sinfo":
+        await query.answer(text=script.SINFO, show_alert=True)
+    elif query.data == "minfo":
+        await query.answer(text=script.MINFO, show_alert=True)
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
@@ -657,6 +668,11 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+        btn.insert(0,
+            [InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
+             InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo'),
+             InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfoo')]
+        )
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
