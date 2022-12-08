@@ -69,7 +69,7 @@ async def next_page(bot, query):
     except:
         n_offset = 0
 
-     if not files:
+    if not files:
         return
     settings = await get_settings(query.message.chat.id)
     if settings['button']:
