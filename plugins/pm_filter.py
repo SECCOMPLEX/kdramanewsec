@@ -81,11 +81,24 @@ async def next_page(bot, query):
             ]
             for file in files
             ]
-      btn.insert(0, 
+    else:
+        btn = [
+            [
+                InlineKeyboardButton(
+                    text=f"{file.file_name}",
+                    callback_data=f'{pre}#{file.file_id}',
+                ),
+                InlineKeyboardButton(
+                    text=f"{get_size(file.file_size)}",
+                    callback_data=f'{pre}#{file.file_id}',
+                ),
+            ]
+            for file in files
+       btn.insert(0, 
                 [
                     InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
                     InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])       
+                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])   
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
