@@ -82,13 +82,6 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-        btn.insert(0,
-            [
-                InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo"),
-                InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
-                InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo")
-            ]
-        )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -97,6 +90,10 @@ async def next_page(bot, query):
     else:
         off_set = offset - 10
     if n_offset == 0:
+        btn.append(0,
+            [InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo"),
+             InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
+             InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo")])
         btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
@@ -670,18 +667,15 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-        btn.insert(
-            [
-                InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
-                InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo"),
-                InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfoo")
-            ]
-        )
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
+        btn.append(0,
+            [InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
+             InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo"),
+             InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfoo")])
         btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
