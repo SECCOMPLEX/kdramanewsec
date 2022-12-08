@@ -93,26 +93,12 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-        
-            try:
-        if 
-            btn.insert(0, 
+           btn.insert(0, 
                 [
                     InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
                     InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
+                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])
 
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
-               
-        
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -701,23 +687,11 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-            try:
-        if 
-            btn.insert(0, 
+           btn.insert(0, 
                 [
                     InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
                     InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
-
-        else:
-            btn.insert(0, 
-                [
-                    InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
-                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
-                ]
-            )
+                    InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')])
                
                 
     if offset != "":
