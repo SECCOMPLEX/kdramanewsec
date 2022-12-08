@@ -101,11 +101,6 @@ async def next_page(bot, query):
     else:
         off_set = offset - 10
     if n_offset == 0:
-        btn.insert([
-                    InlineKeyboardButton('ɪɴꜰᴏ', callback_data='reqinfo'),
-                    InlineKeyboardButton('ᴍᴏᴠɪᴇ', callback_data='minfo'),
-                    InlineKeyboardButton('ꜱᴇʀɪᴇꜱ', callback_data="sinfo")
-          ])
         btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
             [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
@@ -113,21 +108,11 @@ async def next_page(bot, query):
                                   callback_data="pages")]
         )
     elif off_set is None:
-        btn.insert([
-                    InlineKeyboardButton('ɪɴꜰᴏ', callback_data='reqinfo'),
-                    InlineKeyboardButton('ᴍᴏᴠɪᴇ', callback_data='minfo'),
-                    InlineKeyboardButton('ꜱᴇʀɪᴇꜱ', callback_data="sinfo")
-          ])
         btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
-        btn.insert([
-                    InlineKeyboardButton('ɪɴꜰᴏ', callback_data='reqinfo'),
-                    InlineKeyboardButton('ᴍᴏᴠɪᴇ', callback_data='minfo'),
-                    InlineKeyboardButton('ꜱᴇʀɪᴇꜱ', callback_data="sinfo")
-          ])
         btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
             [
@@ -701,22 +686,12 @@ async def auto_filter(client, msg, spoll=False):
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
-        btn.insert([
-                    InlineKeyboardButton('ɪɴꜰᴏ', callback_data='reqinfo'),
-                    InlineKeyboardButton('ᴍᴏᴠɪᴇ', callback_data='minfo'),
-                    InlineKeyboardButton('ꜱᴇʀɪᴇꜱ', callback_data="sinfo")
-          ])
         btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
-        btn.insert([
-                    InlineKeyboardButton('ɪɴꜰᴏ', callback_data='reqinfo'),
-                    InlineKeyboardButton('ᴍᴏᴠɪᴇ', callback_data='minfo'),
-                    InlineKeyboardButton('ꜱᴇʀɪᴇꜱ', callback_data="sinfo")
-          ])
         btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://t.me/{temp.U_NAME}")])
         btn.append(
              [InlineKeyboardButton(text="𝙽𝙾 𝙼𝙾𝚁𝙴 𝙿𝙰𝙶𝙴𝚂 𝙰𝚅𝙰𝙸𝙻𝙰𝙱𝙻𝙴",callback_data="pages")]
