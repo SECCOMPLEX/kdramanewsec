@@ -90,7 +90,7 @@ async def next_page(bot, query):
     else:
         off_set = offset - 10
     if n_offset == 0:
-        btn.append(0,
+        btn.insert(0,
             [InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo"),
              InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
              InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo")])
@@ -672,7 +672,7 @@ async def auto_filter(client, msg, spoll=False):
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
-        btn.append(0,
+        btn.insert(0,
             [InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
              InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo"),
              InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfoo")])
