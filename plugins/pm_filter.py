@@ -589,11 +589,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('👩‍🦯 Back', callback_data="start"),
                     InlineKeyboardButton('📞 Contact', url="t.me/Sandaruwan_Feedback_Bot")
                   ]]
-            await client.edit_message_media(
-                query.message.chat.id, 
-                query.message.id, 
-                InputMediaPhoto(random.choice(PICS))
-            )
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=script.OWNER_INFO,
