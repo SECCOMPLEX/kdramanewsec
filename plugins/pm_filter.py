@@ -35,7 +35,18 @@ async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
         await auto_filter(client, message)
-
+        
+@Client.on_message(filters.private & filters.text & filters.incoming)
+async def pm_text(bot, message):
+    content = message.text
+    user = message.from_user.first_name
+    user_id = message.from_user.id
+    if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
+    if user_id in ADMINS: return # ignore admins
+    await bot.send_message(
+        chat_id=LOG_CHANNEL,
+        text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
+    )        
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
@@ -94,19 +105,19 @@ async def next_page(bot, query):
             [InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo"),
              InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
              InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo")])
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📃 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎"", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎"", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [
                 InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
@@ -417,14 +428,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ], [
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/SECLK')
-        ], [
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
-        ]]
+                    InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],[
+                    InlineKeyboardButton('🔍 Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+                    InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ 🤖', url=f'https://t.me/SECLK')
+                ],[
+                    InlineKeyboardButton('Hᴇʟᴘ ℹ️', callback_data='help'),
+                    InlineKeyboardButton('Aʙᴏᴜᴛ 😊', callback_data='about'),
+                    InlineKeyboardButton('Bᴏᴛ Oᴡɴᴇʀ 👤', callback_data="owner_info")
+                ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -451,8 +463,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/seclk'),
-            InlineKeyboardButton('♥️ Main Channel', url='https://t.me/SECL4u')
+            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/seclk'),
+            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url='https://t.me/SECL4u')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
@@ -572,6 +584,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+                                         
+     elif query.data == "owner_info":
+            btn = [[
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data="start"),
+                    InlineKeyboardButton('📞 Contact', url="t.me/Sandaruwan_Feedback_Bot")
+                  ]]
+            await client.edit_message_media(
+                query.message.chat.id, 
+                query.message.id, 
+                InputMediaPhoto(random.choice(PICS))
+            )
+            reply_markup = InlineKeyboardMarkup(btn)
+            await query.message.edit_text(
+                text=(script.OWNER_INFO),
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
+                                         
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
         grpid = await active_connection(str(query.from_user.id))
@@ -676,15 +706,15 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
              InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo"),
              InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo")])
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
-        btn.append([InlineKeyboardButton("Check My PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
+        btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="𝙽𝙾 𝙼𝙾𝚁𝙴 𝙿𝙰𝙶𝙴𝚂 𝙰𝚅𝙰𝙸𝙻𝙰𝙱𝙻𝙴", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -721,7 +751,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"Here is what i found for your query ➠ {search}"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
