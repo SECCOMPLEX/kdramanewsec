@@ -112,11 +112,19 @@ async def next_page(bot, query):
                                   callback_data="pages")]
         )
     elif off_set is None:
+        btn.insert(0,
+            [InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo"),
+             InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
+             InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo")])
         btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
+        btn.insert(0,
+            [InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo"),
+             InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
+             InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo")])
         btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [
@@ -706,6 +714,10 @@ async def auto_filter(client, msg, spoll=False):
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
+        btn.insert(0,
+            [InlineKeyboardButton("ɪɴꜰᴏ", callback_data="reqinfo"),
+             InlineKeyboardButton("ᴍᴏᴠɪᴇ", callback_data="minfo"),
+             InlineKeyboardButton("ꜱᴇʀɪᴇꜱ", callback_data="sinfo")])
         btn.append([InlineKeyboardButton("Cʜᴇᴄᴋ Bᴏᴛ PM 😎", url=f"https://telegram.dog/{temp.U_NAME}?")])
         btn.append(
             [InlineKeyboardButton(text="𝙽𝙾 𝙼𝙾𝚁𝙴 𝙿𝙰𝙶𝙴𝚂 𝙰𝚅𝙰𝙸𝙻𝙰𝙱𝙻𝙴", callback_data="pages")]
