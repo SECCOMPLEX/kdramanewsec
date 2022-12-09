@@ -116,3 +116,11 @@ sᴇʀɪᴇs ɴᴀᴍᴇ     sᴇᴀsᴏɴ     ʀᴇsᴏʟᴜᴛɪᴏɴ
 ᴇxᴀᴍᴘʟᴇ : Loki S01E01 | You S03 | Wednesday S01 720p
 
 🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)"""
+    
+    
+    OWNER_INFO = """
+<b>⍟───[ ᴏᴡɴᴇʀ ᴅᴇᴛᴀɪʟꜱ ]───⍟
+    
+• ꜰᴜʟʟ ɴᴀᴍᴇ : 𝚂𝚊𝚑𝚊𝚗 𝚂𝚊𝚗𝚍𝚊𝚛𝚞𝚠𝚊𝚗
+• ᴀʙᴏᴜᴛ : <a href='https://t.me/About_Sandaruwan'>ᴀʙᴏᴜᴛ sᴀɴᴅᴀʀᴜᴡᴀɴ</a>
+• ᴅᴍ ʟɪɴᴋ : <a href='https://t.me/Sandaruwan_Feedback_Bot'>sᴀʜᴀɴs</a></b>"""
