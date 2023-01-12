@@ -5,11 +5,13 @@ class script(object):
 𝙈𝙖𝙙𝙚 𝙛𝙤𝙧 <a href=https://t.me/kdrama_index>𝗸𝗱𝗿𝗮𝗺𝗮_𝗶𝗻𝗱𝗲𝘅</a>, """
     HELP_TXT = """𝗵𝗲𝘆 {},
 𝙃𝙚𝙧𝙚 𝙞𝙨 𝙩𝙝𝙚 𝙝𝙚𝙡𝙥 𝙛𝙤𝙧 𝙢𝙮 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨."""
-    ABOUT_TXT = """○ 𝙈𝙮 𝙉𝙖𝙢𝙚: <b><i>{}</i></b> 
-○ 𝙇𝙞𝙗𝙧𝙖𝙧𝙮: 𝙋𝙮𝙧𝙤𝙜𝙧𝙖𝙢 
-○ 𝙇𝙖𝙣𝙜𝙪𝙖𝙜𝙚: 𝙋𝙮𝙩𝙝𝙤𝙣 3 
-○ 𝘽𝙤𝙩 𝙎𝙚𝙧𝙫𝙚𝙧: 𝙃𝙚𝙧𝙤𝙠𝙪 
-○ 𝘽𝙪𝙞𝙡𝙙 𝙎𝙩𝙖𝙩𝙪𝙨: 𝙑3.8.13"""
+    ABOUT_TXT = """<b><i>Official Bots 🤖
+
+○ @NetflixLKBot - Movie & Series 
+○ @FilterSECBot - Movie & Series 
+○ @HbOLKBot - Movie Only
+○ @AppleLKBot - Series Only
+○ @KDSearch_Bot - KDrama Only </i></b>"""
       
     MANUELFILTER_TXT = """𝙷𝚎𝚕𝚙: <b>Filters</b>
 - 𝙵𝚒𝚕𝚝𝚎𝚛 𝚒𝚜 𝚝𝚑𝚎 𝚏𝚎𝚊𝚝𝚞𝚛𝚎 𝚠𝚎𝚛𝚎 𝚞𝚜𝚎𝚛𝚜 𝚌𝚊𝚗 𝚜𝚎𝚝 𝚊𝚞𝚝𝚘𝚖𝚊𝚝𝚎𝚍 𝚛𝚎𝚙𝚕𝚒𝚎𝚜 𝚏𝚘𝚛 𝚊 𝚙𝚊𝚛𝚝𝚒𝚌𝚞𝚕𝚊𝚛 𝚔𝚎𝚢𝚠𝚘𝚛𝚍 𝚊𝚗𝚍 𝚝𝚎𝚜𝚜𝚊 𝚠𝚒𝚕𝚕 𝚛𝚎𝚜𝚙𝚘𝚗𝚍 𝚠𝚑𝚎𝚗𝚎𝚟𝚎𝚛 𝚊 𝚔𝚎𝚢𝚠𝚘𝚛𝚍 𝚒𝚜 𝚏𝚘𝚞𝚗𝚍 𝚝𝚑𝚎 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 
