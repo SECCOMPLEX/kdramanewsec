@@ -439,10 +439,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ 🤖', url=f'https://t.me/SECLK')
+                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url=f'https://t.me/SECLK')
                 ],[
-                    InlineKeyboardButton('Hᴇʟᴘ ℹ️', callback_data='help'),
-                    InlineKeyboardButton('Bots 🎴', callback_data='about')
+                    InlineKeyboardButton('❕ ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('🐬 ʙᴏᴛs', callback_data='about')
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
