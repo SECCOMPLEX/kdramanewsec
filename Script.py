@@ -4,14 +4,14 @@ class script(object):
     HELP_TXT = """ 𝙷𝙴𝚑  {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
     ABOUT_TXT = """
-𝙷𝚎𝚛𝚎 𝚊𝚛𝚎 𝚜𝚘𝚖𝚎 𝚍𝚎𝚝𝚊𝚒𝚕𝚜 𝚢𝚘𝚞 𝚗𝚎𝚎𝚍 𝚝𝚘 𝚔𝚗𝚘𝚠.
+OUR BOTS LIST...
 
-✯ 𝙱𝙾𝚃 𝚃𝚈𝙿𝙴 : 𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝚅𝟹	
-✯ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁 : <a href="https://t.me/About_Sandaruwan">𝚂𝚊𝚑𝚊𝚗 𝚂</a>
-✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴 : 𝙿𝚈𝚃𝙷𝙾𝙽3 
-✯ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈 : 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼 
-✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: 𝚟𝟹.𝟷.𝟷 [ 𝙱𝙴𝚃𝙰 ]
-✯ 𝚂𝙾𝚄𝚁𝙲𝙴 : 🔐"""  
+✯ @NetflixLKBot -  Movie & Series
+✯ @FilterSECBot - Movie & Series
+✯ @HbOLKBot - Movie Only
+✯ @AppleLKBot - Series Only
+✯ @KDSearch_Bot  - KDrama Only
+✯ @OnlyFansUKBot - Adults Only"""  
 
       
     MANUELFILTER_TXT = """𝙷𝚎𝚕𝚙: <b>Filters</b>
