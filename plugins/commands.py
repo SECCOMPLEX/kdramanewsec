@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('🎴 Updates', url='https://t.me/kdrama_index')
+                InlineKeyboardButton('🎴 Updates', url='https://t.me/SECLKBots')
             ],
             [
                 InlineKeyboardButton('❕ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -45,7 +45,7 @@ async def start(client, message):
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/kdrama_index')
+                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/SECLKBots')
                 ],[
                     InlineKeyboardButton('❕ ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('🐬 ʙᴏᴛs ', callback_data='about')
@@ -91,7 +91,7 @@ async def start(client, message):
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/kdrama_index')
+                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/SECLKBots')
                 ],[
                     InlineKeyboardButton('❕ ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('🐬 ʙᴏᴛs ', callback_data='about')
