@@ -4,14 +4,14 @@ class script(object):
     HELP_TXT = """ 𝙷𝙴𝚑  {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
     ABOUT_TXT = """
-OUR BOTS LIST...
+<b><i>OUR BOTS LIST...</i>
 
 ✯ @NetflixLKBot -  Movie & Series
 ✯ @FilterSECBot - Movie & Series
 ✯ @HbOLKBot - Movie Only
 ✯ @AppleLKBot - Series Only
 ✯ @KDSearch_Bot  - KDrama Only
-✯ @OnlyFansUKBot - Adults Only"""  
+✯ @OnlyFansUKBot - Adults Only</b>"""  
 
       
     MANUELFILTER_TXT = """𝙷𝚎𝚕𝚙: <b>Filters</b>
