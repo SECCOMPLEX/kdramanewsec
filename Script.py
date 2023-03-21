@@ -5,18 +5,13 @@ class script(object):
 𝙈𝙖𝙙𝙚 𝙛𝙤𝙧 <a href=https://t.me/SECLKBots>SEC BOTS</a>, """
     HELP_TXT = """𝗵𝗲𝘆 {},
 𝙃𝙚𝙧𝙚 𝙞𝙨 𝙩𝙝𝙚 𝙝𝙚𝙡𝙥 𝙛𝙤𝙧 𝙢𝙮 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨."""
-    ABOUT_TXT = """<b><i>Official Bots 🤖</i>
+    ABOUT_TXT = """ <b>Official Bots 🤖
 
 1. @NetflixLKBot -  Movie & Series 
-
 2. @FilterSECBot - Movie & Series 
-
 3. @HbOLKBot - Movie Only
-
 4. @AppleLKBot - Series Only
-
 5. @KDSearch_Bot  - KDrama Only
-
 6. @OnlyFansUKBot - Adults Only </b>"""
       
     MANUELFILTER_TXT = """𝙷𝚎𝚕𝚙: <b>Filters</b>
