@@ -1,17 +1,23 @@
 class script(object):
-    START_TXT = """ 𝙃𝙚𝙮 <b><i>{}</i></b>,
-𝙄'𝙢, <a href=https://t.me/{}><i><b>{}</b></i></a>, 𝙄 𝙘𝙖𝙣 𝙥𝙧𝙤𝙫𝙞𝙙𝙚 𝙮𝙤𝙪 𝙠𝙙𝙧𝙖𝙢𝙖, 𝙅𝙪𝙨𝙩 𝘼𝙙𝙙 𝙈𝙚 𝙩𝙤 𝙮𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 👥.
+    START_TXT = """𝙷𝙴𝙻𝙾 {},
+𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍"""
 
-𝙈𝙖𝙙𝙚 𝙛𝙤𝙧 <a href=https://t.me/kdrama_index>𝗸𝗱𝗿𝗮𝗺𝗮_𝗶𝗻𝗱𝗲𝘅</a>, """
+𝙈𝙖𝙙𝙚 𝙛𝙤𝙧 <a href=https://t.me/SECLKBots>SEC BOTS</a>, """
     HELP_TXT = """𝗵𝗲𝘆 {},
 𝙃𝙚𝙧𝙚 𝙞𝙨 𝙩𝙝𝙚 𝙝𝙚𝙡𝙥 𝙛𝙤𝙧 𝙢𝙮 𝙘𝙤𝙢𝙢𝙖𝙣𝙙𝙨."""
-    ABOUT_TXT = """<b><i>Official Bots 🤖
+    ABOUT_TXT = """<b><i>Official Bots 🤖</i>
 
-○ @NetflixLKBot - Movie & Series 
-○ @FilterSECBot - Movie & Series 
-○ @HbOLKBot - Movie Only
-○ @AppleLKBot - Series Only
-○ @KDSearch_Bot - KDrama Only </i></b>"""
+1. @NetflixLKBot -  Movie & Series 
+
+2. @FilterSECBot - Movie & Series 
+
+3. @HbOLKBot - Movie Only
+
+4. @AppleLKBot - Series Only
+
+5. @KDSearch_Bot  - KDrama Only
+
+6. @OnlyFansUKBot - Adults Only </b>"""
       
     MANUELFILTER_TXT = """𝙷𝚎𝚕𝚙: <b>Filters</b>
 - 𝙵𝚒𝚕𝚝𝚎𝚛 𝚒𝚜 𝚝𝚑𝚎 𝚏𝚎𝚊𝚝𝚞𝚛𝚎 𝚠𝚎𝚛𝚎 𝚞𝚜𝚎𝚛𝚜 𝚌𝚊𝚗 𝚜𝚎𝚝 𝚊𝚞𝚝𝚘𝚖𝚊𝚝𝚎𝚍 𝚛𝚎𝚙𝚕𝚒𝚎𝚜 𝚏𝚘𝚛 𝚊 𝚙𝚊𝚛𝚝𝚒𝚌𝚞𝚕𝚊𝚛 𝚔𝚎𝚢𝚠𝚘𝚛𝚍 𝚊𝚗𝚍 𝚝𝚎𝚜𝚜𝚊 𝚠𝚒𝚕𝚕 𝚛𝚎𝚜𝚙𝚘𝚗𝚍 𝚠𝚑𝚎𝚗𝚎𝚟𝚎𝚛 𝚊 𝚔𝚎𝚢𝚠𝚘𝚛𝚍 𝚒𝚜 𝚏𝚘𝚞𝚗𝚍 𝚝𝚑𝚎 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 
