@@ -6,7 +6,7 @@ from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
+from database.ia_filterdb import Media, get_file_details, unpack_new_file_id, get_delete_files
 from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
@@ -510,3 +510,20 @@ async def save_template(client, message):
     template = message.text.split(" ", 1)[1]
     await save_group_settings(grp_id, 'template', template)
     await sts.edit(f"Successfully changed template for {title} to\n\n{template}")
+
+    
+    
+@Client.on_message(filters.command('delete_file') & filters.user(ADMINS))
+async def delete_file(bot, message):
+    try:
+        query = message.text.split(" ", 1)[1]
+    except:
+        return await message.reply_text("Command Incomplete!")
+    
+    files, total_results = await get_delete_files(query)
+    btn = [[
+        InlineKeyboardButton("YES", callback_data=f"delete_files#{query}")
+    ],[
+        InlineKeyboardButton("CLOSE", callback_data="close_data")
+    ]]
+    await message.reply_text(f"Total {total_results} found in your query {query}\nDo you want to delete?", reply_markup=InlineKeyboardMarkup(btn))
