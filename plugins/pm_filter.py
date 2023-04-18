@@ -602,7 +602,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
-                                         
+                           
+    elif query.data.startswith("delete_files"):
+        ident, search = query.data.split("#")
+        await query.message.edit_text("Deleting...")
+        files, total_results = await get_delete_files(search)
+        result = await Media.collection.delete_many(files)
+        if result.deleted_count:
+            await query.message.edit_text(f"Successfully deleted {total_results} files")
+        else:
+            await query.message.edit_text("Nothing to delete files")
+            
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
         grpid = await active_connection(str(query.from_user.id))
@@ -651,17 +661,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
     await query.answer('Piracy Is Crime')
-
-
-    elif query.data.startswith("delete_files"):
-        ident, search = query.data.split("#")
-        await query.message.edit_text("Deleting...")
-        files, total_results = await get_delete_files(search)
-        result = await Media.collection.delete_many(files)
-        if result.deleted_count:
-            await query.message.edit_text(f"Successfully deleted {total_results} files")
-        else:
-            await query.message.edit_text("Nothing to delete files")
             
             
 async def auto_filter(client, msg, spoll=False):
