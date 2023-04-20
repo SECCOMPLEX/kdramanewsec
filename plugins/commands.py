@@ -48,7 +48,7 @@ async def start(client, message):
                     InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/SECLK')
                 ],[
                     InlineKeyboardButton('❕ ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('🐬 ʙᴏᴛs ', callback_data='about')
+                    InlineKeyboardButton('🐬 ʙᴏᴛs ', url='https://t.me/SECL4U/54')
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -94,7 +94,7 @@ async def start(client, message):
                     InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/SECLK')
                 ],[
                     InlineKeyboardButton('❕ ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('🐬 ʙᴏᴛs ', callback_data='about')
+                    InlineKeyboardButton('🐬 ʙᴏᴛs ', url='https://t.me/SECL4U/54')
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
