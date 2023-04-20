@@ -45,10 +45,12 @@ async def start(client, message):
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/SECLK')
+                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url=f'https://t.me/SECLK')
                 ],[
                     InlineKeyboardButton('❕ ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('🐬 ʙᴏᴛs ', url='https://t.me/SECL4U/54')
+                ],[
+                    InlineKeyboardButton('📞 ᴄᴏɴᴛᴀᴄᴛ ʙᴏᴛ ᴏᴡɴᴇʀ', url="t.me/Sandaruwan_Feedback_Bot")
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -91,10 +93,12 @@ async def start(client, message):
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 Iɴʟɪɴᴇ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url='https://t.me/SECLK')
+                    InlineKeyboardButton('🎴 ᴜᴘᴅᴀᴛᴇs', url=f'https://t.me/SECLK')
                 ],[
                     InlineKeyboardButton('❕ ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('🐬 ʙᴏᴛs ', url='https://t.me/SECL4U/54')
+                ],[
+                    InlineKeyboardButton('📞 ᴄᴏɴᴛᴀᴄᴛ ʙᴏᴛ ᴏᴡɴᴇʀ', url="t.me/Sandaruwan_Feedback_Bot")
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
